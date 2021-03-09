@@ -4,8 +4,10 @@
 
   --bg: #393e46;
   --note-bg: #00adb5;
-  --note-header: #e3fdfd;
-  --note-content: #cbf1f5;
+  --note-header: #222831;
+  --note-content: #393e46;
+  /* --note-header: #e3fdfd;
+  --note-content: #cbf1f5; */
 
   --footer-text: #ff2e63;
 }
@@ -52,6 +54,7 @@ footer p {
 
 .note {
   background: var(--note-bg);
+  background: linear-gradient(0deg, rgba(8, 217, 214, 1) 0%, var(--note-bg) 100%);
   border-radius: 7px;
   box-shadow: 0 2px 5px var(--bg);
   padding: 10px;
@@ -63,7 +66,7 @@ footer p {
 .note h1 {
   font-size: 1.1em;
   margin-bottom: 6px;
-  color: var(--note-header)
+  color: var(--note-header);
 }
 
 .note p {
