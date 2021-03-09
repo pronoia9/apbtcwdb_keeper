@@ -1,3 +1,4 @@
+/***************************** COLORS ******************************/
 :root {
   --header-bg: #222831;
   --header-text: #ff2e63;
@@ -6,11 +7,15 @@
   --note-bg: #00adb5;
   --note-header: #222831;
   --note-content: #393e46;
-  /* --note-header: #e3fdfd;
-  --note-content: #cbf1f5; */
+
+  --light-color1: #e3fdfd;
+  --light-color2: #cbf1f5;
+  --input-text: #364f6b;
 
   --footer-text: #ff2e63;
 }
+/*******************************************************************/
+
 
 * {
   padding: 0;
@@ -52,6 +57,8 @@ footer p {
   color: var(--footer-text);
 }
 
+
+/****************************** NOTES ******************************/
 .note {
   background: var(--note-bg);
   background: linear-gradient(0deg, rgba(8, 217, 214, 1) 0%, var(--note-bg) 100%);
@@ -64,15 +71,62 @@ footer p {
 }
 
 .note h1 {
-  font-size: 1.1em;
+  font-size: 1.2rem;
+  font-weight: 700;
   margin-bottom: 6px;
   color: var(--note-header);
 }
 
 .note p {
-  font-size: 1.1em;
+  font-size: 1rem;
   margin-bottom: 10px;
   white-space: pre-wrap;
   word-wrap: break-word;
   color: var(--note-content);
 }
+/*******************************************************************/
+
+
+/******************************* FORM ******************************/
+form {
+  position: relative;
+  width: 480px;
+  margin: 30px auto 20px auto;
+  background: var(--light-color2);
+  padding: 15px;
+  border-radius: 7px;
+  box-shadow: 0 1px 5px rgb(138, 137, 137);
+}
+
+form input {
+  font-weight: 700;
+}
+
+form input,
+form textarea {
+  width: 100%;
+  border: none;
+  padding: 4px;
+  outline: none;
+  font-size: 1.2rem;
+  font-family: inherit;
+  resize: none;
+  background-color: var(--light-color2);
+  color: var(--input-text);
+}
+
+form button {
+  position: absolute;
+  right: 18px;
+  bottom: -18px;
+  background: var(--header-text);
+  color: var(--light-color1);
+  border: none;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  outline: none;
+}
+/*******************************************************************/
