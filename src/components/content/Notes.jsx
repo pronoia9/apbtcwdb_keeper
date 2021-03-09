@@ -1,17 +1,23 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Card from './Card';
 import Create from './Create';
-import notes from '../notes.js';
+import defaultNotes from '../defaultNotes.js';
 
 function Content() {
+  // user input
+  const [input, setInput] = useState({ id: null, title: '', content: '' });
+
+  // all notes
+  const [notes, setNotes] = useState(setDefaultNotes());
+
   return (
     <div>
       <div>
         <Create />
       </div>
       <div>
-        {notes.map((note) => (
-          <Card id={note.id} key={note.id} title={note.title} content={note.content} />
+        {notes.map((notes) => (
+          <Card id={notes.id} key={notes.id} title={notes.title} content={notes.content} />
         ))}
       </div>
     </div>
@@ -19,3 +25,9 @@ function Content() {
 }
 
 export default Content;
+
+function setDefaultNotes() {
+  return defaultNotes.map(function (n) {
+    return { id: Math.random().toString().slice(2), title: n.title, content: n.content };
+  });
+}
