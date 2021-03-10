@@ -10,6 +10,7 @@ function Create(props) {
           placeholder='Title'
           value={props.input.title}
           onChange={(e) => props.setInput({ ...props.input, title: e.target.value })}
+          required
         />
         <textarea
           name='content'
@@ -19,9 +20,7 @@ function Create(props) {
           onChange={(e) => props.setInput({ ...props.input, content: e.target.value })}
         />
         <button
-          style={{ backgroundColor: props.addButtonColor }}
-          onMouseOver={() => props.setAddButtonColor(colors.addButtonHover)}
-          onMouseOut={() => props.setAddButtonColor('')}
+          // style={{ backgroundColor: props.addButtonColor }}
           type='submit'
           onClick={() => props.addNote()}
         >
