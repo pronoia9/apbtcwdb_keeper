@@ -1,14 +1,11 @@
-import React from "react";
+import React from 'react';
 
 function Footer() {
-   const name = "Jay Ansin";
-   return (
-      <footer>
-         <p>
-            &copy; {new Date().getFullYear()}, {name}
-         </p>
-      </footer>
-   );
+  return (
+    <footer>
+      <p>Copyright &copy; {new Date().getFullYear()}</p>
+    </footer>
+  );
 }
 
 export default Footer;
