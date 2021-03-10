@@ -6,7 +6,12 @@ function Card(props) {
     <div className='note'>
       <h1>{props.title}</h1>
       <p>{props.content}</p>
-      <button style={{ textShadow: false && colors.deleteButtonHover }}>DELETE</button>
+      <button
+        style={{ textShadow: props.remove && colors.deleteButtonHover }}
+        onClick={(e) => props.deleteNote(props.id)}
+      >
+        DELETE
+      </button>
     </div>
   );
 }
