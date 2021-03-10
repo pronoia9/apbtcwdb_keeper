@@ -4,6 +4,7 @@ function Edit(props) {
   return (
     <div className='edit-container'>
       <input
+        name='title'
         placeholder='Title'
         value={props.editArea.note.title}
         onChange={(e) =>
@@ -14,9 +15,10 @@ function Edit(props) {
         }
       />
       <textarea
+        name='content'
         placeholder='Add a note...'
-        value={props.editArea.note.content}
         rows='3'
+        value={props.editArea.note.content}
         onChange={(e) =>
           props.setEditArea({
             ...props.editArea,
