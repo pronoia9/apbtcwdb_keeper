@@ -25,19 +25,17 @@ function Create(props) {
         onClick={() => setClick(true)}
       />
       {/* only show the add button if theres an input from the user */}
-      {(props.input.title || props.input.content) && (
-        <Zoom in={true}>
-          <Fab
-            className='btn btn-add'
-            style={{ backgroundColor: props.addButtonColor }}
-            type='submit'
-            onClick={props.addNote}
-            aria-label='add'
-          >
-            <i className='fas fa-plus'></i>
-          </Fab>
-        </Zoom>
-      )}
+      <Zoom in={props.input.title || props.input.content}>
+        <Fab
+          className='btn btn-add'
+          style={{ backgroundColor: props.addButtonColor }}
+          type='submit'
+          onClick={props.addNote}
+          aria-label='add'
+        >
+          <i className='fas fa-plus'></i>
+        </Fab>
+      </Zoom>
     </form>
   );
 }
