@@ -8,7 +8,7 @@ function App() {
       <div>
          <Header />
          <Notes />
-         <Footer />
+         {/* <Footer /> */}
       </div>
    );
 }
