@@ -1,5 +1,4 @@
 import React from 'react';
-import colors from '../colors.js';
 
 function Create(props) {
   return (
@@ -10,7 +9,6 @@ function Create(props) {
           placeholder='Title'
           value={props.input.title}
           onChange={(e) => props.setInput({ ...props.input, title: e.target.value })}
-          required
         />
         <textarea
           name='content'
@@ -20,11 +18,11 @@ function Create(props) {
           onChange={(e) => props.setInput({ ...props.input, content: e.target.value })}
         />
         <button
-          // style={{ backgroundColor: props.addButtonColor }}
+          style={{ backgroundColor: props.addButtonColor }}
           type='submit'
           onClick={() => props.addNote()}
         >
-          +
+          <i className='fas fa-plus'></i>
         </button>
       </form>
     </div>

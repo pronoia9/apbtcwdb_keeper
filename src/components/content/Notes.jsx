@@ -1,39 +1,42 @@
 import React, { useState } from 'react';
 import Card from './Card';
 import Create from './Create';
-import colors from '../colors.js';
+import styles from '../styles.js';
 import defaultNotes from '../defaultNotes.js';
 
 function Content() {
-  const [input, setInput] = useState({ title: '', content: '', remove: false }); // user input
+  const [input, setInput] = useState({ title: '', content: '' }); // user input
   const [notes, setNotes] = useState(setDefaultNotes()); // all notes
   const [addButtonColor, setAddButtonColor] = useState(''); // add button mouseover state (for css)
 
-  // handle add button click
+  // handle on click on add button
   function addNote() {
-    if (input.title !== '' && input.content !== '') {
-      setAddButtonColor(colors.addButtonValid);
+    if (input.title !== '' || input.content !== '') {
+      setAddButtonColor(styles.addButtonValid);
 
       const x = getRandomId();
-      setNotes([...notes, { ...input, id: x, key: x, remove: false }]);
+      setNotes([...notes, { ...input, id: x, key: x }]);
 
       // reset the input values
       setInput({ title: '', content: '' });
     } else {
-      setAddButtonColor(colors.addButtonInvalid);
+      setAddButtonColor(styles.addButtonInvalid);
     }
     // reset the button color
     setTimeout(() => setAddButtonColor(''), 150);
   }
 
-  // remove a note
+  // handle on click on delete icon
   function deleteNote(i) {
-    // change the remove status to true to render delete css
-    setNotes(notes.map((n) => (n.id === i ? { ...n, remove: true } : n)));
-
     // filter the notes and remove the note whos id is the same as the parameter
     setTimeout(() => setNotes(notes.filter((n) => n.id !== i)), 150);
   }
+
+  // handle on click on edit icon
+  // function editNote(i) {
+  //   // change the editable status to true to enable content edit html property
+  //   setNotes(notes.map((n) => (n.id === i ? { ...n, editable: 'true' } : n)));
+  // }
 
   return (
     <div>
@@ -43,6 +46,7 @@ function Content() {
         addNote={addNote}
         addButtonColor={addButtonColor}
         setAddButtonColor={setAddButtonColor}
+        edit={false}
       />
       {notes.map((n) => (
         <Card
@@ -50,9 +54,9 @@ function Content() {
           key={n.id}
           title={n.title}
           content={n.content}
-          remove={n.remove}
           setNotes={setNotes}
           deleteNote={deleteNote}
+          //editNote={editNote}
         />
       ))}
     </div>
@@ -61,11 +65,11 @@ function Content() {
 
 export default Content;
 
-// get random/default notes from defaultNotes.js
+// get default notes from defaultNotes.js
 function setDefaultNotes() {
   return defaultNotes.map(function (n) {
     const y = getRandomId();
-    return { key: y, id: y, title: n.title, content: n.content, remove: false };
+    return { key: y, id: y, title: n.title, content: n.content };
   });
 }
 
