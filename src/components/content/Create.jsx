@@ -1,4 +1,5 @@
 import React from 'react';
+import colors from '../colors.js';
 
 function Create(props) {
   return (
@@ -17,8 +18,14 @@ function Create(props) {
           value={props.input.content}
           onChange={(e) => props.setInput({ ...props.input, content: e.target.value })}
         />
-        <button type='submit' onClick={() => props.addNote()}>
-          Add
+        <button
+          style={{ backgroundColor: props.addButtonColor }}
+          onMouseOver={() => props.setAddButtonColor(colors.addButtonHover)}
+          onMouseOut={() => props.setAddButtonColor('')}
+          type='submit'
+          onClick={() => props.addNote()}
+        >
+          +
         </button>
       </form>
     </div>

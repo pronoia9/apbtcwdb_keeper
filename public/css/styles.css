@@ -84,6 +84,19 @@ footer p {
   word-wrap: break-word;
   color: var(--note-content);
 }
+
+.note button {
+  position: relative;
+  float: right;
+  margin-right: 1.5rem;
+  background-color: transparent;
+  color: var(--header-text);
+  border: none;
+  width: 36px;
+  height: 36px;
+  cursor: pointer;
+  outline: none;
+}
 /*******************************************************************/
 
 
@@ -123,8 +136,8 @@ form button {
   color: var(--light-color1);
   border: none;
   border-radius: 50%;
-  width: 36px;
-  height: 36px;
+  width: 2.5rem;
+  height: 2.5rem;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
   cursor: pointer;
   outline: none;
