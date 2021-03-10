@@ -3,11 +3,11 @@ import Fab from '@material-ui/core/Fab';
 import Zoom from '@material-ui/core/Zoom';
 
 function Create(props) {
-  const [click, setClick] = useState(false);
+  const [isExpanded, setExpanded] = useState(false);
   return (
     <form className='form-container' onSubmit={(e) => e.preventDefault()}>
       {/* shows only after the user clicks on the textarea */}
-      {click && (
+      {isExpanded && (
         <input
           name='title'
           placeholder='Title'
@@ -19,10 +19,10 @@ function Create(props) {
       <textarea
         name='content'
         placeholder='Take a note...'
-        rows={click ? '3' : '1'}
+        rows={isExpanded ? '3' : '1'}
         value={props.input.content}
         onChange={(e) => props.setInput({ ...props.input, content: e.target.value })}
-        onClick={() => setClick(true)}
+        onClick={() => setExpanded(true)}
       />
       {/* only show the add button if theres an input from the user */}
       <Zoom in={props.input.title || props.input.content}>
