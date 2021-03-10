@@ -3,7 +3,7 @@
   --header-bg: #222831;
   --header-text: #ff2e63;
 
-  --bg: #393e46;
+  --bg: #292c30;
   --note-bg: #00adb5;
   --note-header: #222831;
   --note-content: #393e46;
@@ -28,7 +28,8 @@ html {
 }
 
 body {
-  background: var(--bg);
+  background-color: var(--bg);
+  background-image: url('../images/crissxcross.png');
   padding: 0 16px;
 }
 
@@ -48,8 +49,13 @@ header h1 {
 }
 
 header h1 a {
-  text-decoration: none;
   color: var(--header-text);
+  text-decoration: none;
+  margin-left: 0.75rem;
+}
+
+header h1 i {
+  font-size: 1.75rem;
 }
 /*******************************************************************/
 
@@ -173,11 +179,12 @@ header h1 a {
 
 /****************************** FOOTER *****************************/
 footer {
-  background-color: var(--header-bg);
+  /* background-color: var(--header-bg); */
   text-align: center;
-  padding-top: 0.8rem;
   height: 2.5rem;
   width: 100%;
+  padding: 0.8rem 0 0 0;
+  margin: 0;
   position: absolute;
   bottom: 0;
 }
