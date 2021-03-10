@@ -23,7 +23,7 @@
 }
 
 html {
-  font-family: 'Comfortaa', sans-serif;
+  font-family: 'Comfortaa', 'Montserrat', sans-serif;
 }
 
 body {
@@ -34,8 +34,8 @@ body {
 /****************************** HEADER *****************************/
 header {
   background-color: var(--header-bg);
-  margin: auto -16px;
-  padding: 16px 32px;
+  margin: auto -1rem;
+  padding: 1rem 2rem;
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
 }
 
@@ -51,40 +51,42 @@ header h1 a {
 }
 /*******************************************************************/
 
-/******************************* FORM ******************************/
-form,
+
+/**************************** FORM / EDIT **************************/
+.form-container,
 .edit-container {
-  position: relative;
-  width: 480px;
-  margin: 30px auto 20px auto;
   background: var(--light-color2);
-  padding: 15px;
   border-radius: 7px;
   box-shadow: 0 1px 5px rgb(138, 137, 137);
+  margin: 30px auto 20px auto;
+  padding: 15px;
+  width: 480px;
   max-width: 99%;
+  position: relative;
 }
 
-form input,
-.edit-title {
+.form-container input,
+.edit-container input {
   font-weight: 700;
 }
 
-form input,
-form textarea,
-.edit-title,
-.edit-content {
-  width: 100%;
-  border: none;
-  padding: 4px;
-  outline: none;
-  font-size: 1.2rem;
-  font-family: inherit;
-  resize: none;
+.form-container input,
+.form-container textarea,
+.edit-container input,
+.edit-container textarea {
   background-color: var(--light-color2);
+  border: none;
   color: var(--input-text);
+  font-family: inherit;
+  font-size: 1.2rem;
+  outline: none;
+  padding: 4px;
+  resize: none;
+  width: 100%;
 }
 
-button.btn {
+.form-container .btn,
+.edit-container .btn {
   position: absolute;
   right: 1rem;
   bottom: -1rem;
@@ -99,15 +101,17 @@ button.btn {
   outline: none;
 }
 
-button.btn:hover {
+.form-container .btn:hover,
+.edit-container .btn:hover {
   background-color: #e23e57;
 }
 
-button.btn-save {
+.edit-container .btn-save {
   position: absolute;
-  right: 5rem;
+  right: 80px;
 }
 /*******************************************************************/
+
 
 /****************************** NOTES ******************************/
 .note {
@@ -115,10 +119,10 @@ button.btn-save {
   background: linear-gradient(0deg, rgba(8, 217, 214, 1) 0%, var(--note-bg) 100%);
   border-radius: 7px;
   box-shadow: 0 2px 5px var(--bg);
+  float: left;
+  margin: 16px;
   padding: 10px;
   width: 240px;
-  margin: 16px;
-  float: left;
 }
 
 .note:hover {
@@ -126,57 +130,54 @@ button.btn-save {
 }
 
 .note h1 {
+  color: var(--note-header);
   font-size: 1.2rem;
   font-weight: 700;
   margin-bottom: 6px;
-  color: var(--note-header);
 }
 
 .note p {
+  color: var(--note-content);
   font-size: 1rem;
   margin-bottom: 10px;
   white-space: pre-wrap;
   word-wrap: break-word;
-  color: var(--note-content);
 }
 
-.note button {
+.note .btn {
   background-color: transparent;
-  color: var(--header-text);
-  opacity: 9;
   border: none;
-  margin: 2% 2%;
+  color: var(--header-text);
   cursor: pointer;
+  margin: 2% 2%;
+  opacity: 9;
   outline: none;
-}
-
-.note button:hover,
-.note button.btn-edit:hover {
-  text-shadow: 0px 0px 10px #b34180b9;
-}
-
-.note button.btn-edit {
   position: relative;
+}
+
+.note .btn-edit {
   float: left;
 }
 
-.note button.btn-delete {
-  position: relative;
+.note .btn-delete {
   float: right;
+}
+
+.note .btn:hover {
+  text-shadow: 0px 0px 10px #b34180b9;
 }
 /*******************************************************************/
 
+
 /****************************** FOOTER *****************************/
 footer {
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  right: 0;
+  background-color: var(--header-bg);
   height: 2.5rem;
+  padding-top: 0.8rem;
   width: 100%;
   text-align: center;
-  background-color: var(--header-bg);
-  padding-top: 0.8rem;
+  position: absolute;
+  bottom: 0;
 }
 
 footer p {
