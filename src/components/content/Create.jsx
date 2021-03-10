@@ -1,4 +1,7 @@
 import React from 'react';
+import { makeStyles } from '@material-ui/core/styles';
+import Fab from '@material-ui/core/Fab';
+import Zoom from '@material-ui/core/Zoom';
 
 function Create(props) {
   return (
@@ -16,14 +19,18 @@ function Create(props) {
         value={props.input.content}
         onChange={(e) => props.setInput({ ...props.input, content: e.target.value })}
       />
-      <button
-        className='btn btn-add'
-        style={{ backgroundColor: props.addButtonColor }}
-        type='submit'
-        onClick={props.addNote}
-      >
-        <i className='fas fa-plus'></i>
-      </button>
+
+      <Zoom in={true}>
+        <Fab
+          className='btn btn-add'
+          style={{ backgroundColor: props.addButtonColor }}
+          type='submit'
+          onClick={props.addNote}
+          aria-label='add'
+        >
+          <i className='fas fa-plus'></i>
+        </Fab>
+      </Zoom>
     </form>
   );
 }
