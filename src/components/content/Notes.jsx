@@ -84,7 +84,6 @@ function Content() {
       ) : (
         <Create input={input} setInput={setInput} addNote={addNote} addButtonColor={addButtonColor} />
       )}
-
       {notes.map((n) => (
         <Card
           id={n.id}

@@ -61,6 +61,7 @@ form,
   padding: 15px;
   border-radius: 7px;
   box-shadow: 0 1px 5px rgb(138, 137, 137);
+  max-width: 99%;
 }
 
 form input,
@@ -168,10 +169,14 @@ button.btn-save {
 /****************************** FOOTER *****************************/
 footer {
   position: absolute;
-  text-align: center;
+  left: 0;
   bottom: 0;
-  width: 100%;
+  right: 0;
   height: 2.5rem;
+  width: 100%;
+  text-align: center;
+  background-color: var(--header-bg);
+  padding-top: 0.8rem;
 }
 
 footer p {
