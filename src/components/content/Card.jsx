@@ -5,7 +5,7 @@ function Card(props) {
     <div className='note'>
       <h1>{props.title}</h1>
       <p>{props.content}</p>
-      <button className='btn-edit'>
+      <button className='btn-edit' onClick={() => props.showEditArea(props.id)}>
         <i className='fas fa-edit'></i>
       </button>
       <button className='btn-delete' onClick={() => props.deleteNote(props.id)}>
