@@ -6,22 +6,25 @@ function Create(props) {
   const [click, setClick] = useState(false);
   return (
     <form className='form-container' onSubmit={(e) => e.preventDefault()}>
-      <input
-        name='title'
-        placeholder='Title'
-        value={props.input.title}
-        onClick={() => setClick(true)}
-        onChange={(e) => props.setInput({ ...props.input, title: e.target.value })}
-      />
+      {/* shows only after the user clicks on the textarea */}
       {click && (
-        <textarea
-          name='content'
-          placeholder='Take a note...'
-          rows='3'
-          value={props.input.content}
-          onChange={(e) => props.setInput({ ...props.input, content: e.target.value })}
+        <input
+          name='title'
+          placeholder='Title'
+          value={props.input.title}
+          onChange={(e) => props.setInput({ ...props.input, title: e.target.value })}
         />
       )}
+      {/* expands after the user clicks */}
+      <textarea
+        name='content'
+        placeholder='Take a note...'
+        rows={click ? '3' : '1'}
+        value={props.input.content}
+        onChange={(e) => props.setInput({ ...props.input, content: e.target.value })}
+        onClick={() => setClick(true)}
+      />
+      {/* only show the add button if theres an input from the user */}
       {(props.input.title || props.input.content) && (
         <Zoom in={true}>
           <Fab
