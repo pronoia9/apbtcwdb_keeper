@@ -3,7 +3,7 @@ const colors = {
   addButtonValid: '#88304e',
   addButtonInvalid: '#522546',
   addButtonClick: '#311d3f',
-  deleteButtonHover: '0 0 35px #ffffff44, 0 0 20px #fc199a',
+  deleteButtonHover: '2px 2px 5px #b34180',
   deleteButtonClick: '#311d3f',
 };
 
