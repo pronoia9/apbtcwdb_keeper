@@ -23,10 +23,17 @@ function Edit(props) {
       />
       <button
         style={{ backgroundColor: props.addButtonColor }}
-        className='edit-btn'
+        className='btn btn-save'
         onClick={() => props.editNote(props.editArea.note.id)}
       >
-        <i className='fas fa-pen'></i>
+        <i class='fas fa-save'></i>
+      </button>
+      <button
+        style={{ backgroundColor: props.addButtonColor }}
+        className='btn btn-cancel'
+        onClick={() => props.setEditArea({ show: false })}
+      >
+        <i className='fas fa-times'></i>
       </button>
     </div>
   );

@@ -18,9 +18,10 @@ function Create(props) {
           onChange={(e) => props.setInput({ ...props.input, content: e.target.value })}
         />
         <button
+          className='btn btn-add'
           style={{ backgroundColor: props.addButtonColor }}
           type='submit'
-          onClick={() => props.addNote()}
+          onClick={props.addNote}
         >
           <i className='fas fa-plus'></i>
         </button>

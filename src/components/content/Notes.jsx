@@ -16,7 +16,7 @@ function Content() {
   // handle on click on add button
   function addNote() {
     // invalid input (both fields are empty)
-    if (input.title !== '' && input.content !== '') {
+    if (input.title === '' && input.content === '') {
       setAddButtonColor(styles.addButtonInvalid);
     } else {
       setAddButtonColor(styles.addButtonValid);
@@ -56,7 +56,6 @@ function Content() {
     }
     // check if theres a change or not
     else if (editArea.note.title === foundNote.title && editArea.note.content === foundNote.content) {
-      // TODO: Decide if the editor panel should close if there are no changes or stay open until a change is made. Maybe add another button to close without saving whether or not a change was made?
     }
     // there were changes, so change the note
     else {
@@ -66,9 +65,9 @@ function Content() {
           n.id === i ? { ...n, title: editArea.note.title, content: editArea.note.content } : n
         )
       );
+      setEditArea({ show: false });
     }
-    setEditArea({ show: false });
-    
+
     // reset the button color
     setTimeout(() => setAddButtonColor(''), 150);
   }
